@@ -1,0 +1,20 @@
+/*.root {
+	-fx-font-family: Verdana;
+	-fx-font-size: 14px;
+}
+
+.button {
+	-fx-border-style: solid outside line-cap butt;
+	-fx-border-width: 1px;
+	-fx-border-color: rgb(0,128,192);
+}
+
+#tabs {
+	-fx-background-color: transparent;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0em 0.166667em 0.0em 0.0em;
+}
+*/

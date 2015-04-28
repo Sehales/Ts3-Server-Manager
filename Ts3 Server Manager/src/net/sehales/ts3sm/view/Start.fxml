@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+               <children>
+                  <HBox layoutX="196.0" layoutY="146.0" prefHeight="53.0" prefWidth="431.0">
+                     <children>
+                        <Button fx:id="loginBtn" alignment="TOP_LEFT" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#onLoginAction" prefHeight="25.0" prefWidth="150.0" text="%start.button.login" />
+                        <Button fx:id="logoutBtn" alignment="TOP_LEFT" disable="true" mnemonicParsing="false" onAction="#onLogoutAction" prefHeight="25.0" prefWidth="150.0" text="%start.button.logout">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" disable="true" layoutY="85.0" prefHeight="485.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="85.0">
+         <children>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefWidth="150.0" text="%start.button.settings">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Button>
+         </children>
+                  </VBox>
+                  <Separator layoutX="157.0" layoutY="14.0" orientation="VERTICAL" prefHeight="288.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="0.0" />
+                  <Separator layoutX="150.0" layoutY="84.0" prefHeight="4.0" prefWidth="762.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <HBox layoutX="191.0" layoutY="88.0" prefHeight="58.0" prefWidth="643.0" AnchorPane.leftAnchor="191.0" AnchorPane.topAnchor="88.0">
+                     <children>
+                        <VBox prefHeight="32.0" prefWidth="180.0">
+                           <children>
+                              <Label text="%start.label.address" />
+                              <TextField fx:id="addressField" prefHeight="25.0" prefWidth="153.0" promptText="%start.prompt.address" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="15.0" layoutY="15.0" prefHeight="53.0" prefWidth="60.0">
+                           <children>
+                              <Label text="%start.label.port" />
+                              <TextField fx:id="portField" prefHeight="25.0" prefWidth="126.0" promptText="%start.prompt.port" text="10011" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="15.0" layoutY="15.0" prefHeight="32.0" prefWidth="180.0">
+                           <children>
+                              <Label text="%start.label.username" />
+                              <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="153.0" promptText="%start.prompt.username" text="serveradmin" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="255.0" layoutY="15.0" prefHeight="32.0" prefWidth="180.0">
+                           <children>
+                              <Label text="%start.label.password" />
+                              <PasswordField fx:id="passwordField" promptText="%start.prompt.password">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </PasswordField>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <TableView fx:id="favTable" layoutX="196.0" layoutY="206.0" prefHeight="340.0" prefWidth="525.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="205.0">
+                    <columns>
+                        <TableColumn prefWidth="150.0" text="%start.tablehead.name">
+                        <cellValueFactory>
+                             	<PropertyValueFactory property="name" />
+                          	</cellValueFactory>
+                      </TableColumn>
+                      <TableColumn prefWidth="160.0" text="%start.tablehead.address">
+                   			<cellValueFactory>
+                             	<PropertyValueFactory property="address" />
+                          	</cellValueFactory>
+                      </TableColumn>
+                      <TableColumn minWidth="0.0" prefWidth="45.0" text="%start.tablehead.port">
+                           	<cellValueFactory>
+                             	<PropertyValueFactory property="port" />
+                           	</cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="150.0" text="%start.tablehead.username">
+                        	<cellValueFactory>
+                            	<PropertyValueFactory property="username" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                  </TableView>
+                  <VBox layoutX="726.0" layoutY="205.0" prefHeight="340.0" prefWidth="160.0" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="205.0">
+                     <children>
+                        <Button fx:id="saveBtn" alignment="TOP_LEFT" disable="true" mnemonicParsing="false" onAction="#onSaveAction" prefHeight="25.0" prefWidth="150.0" text="%start.button.save" />
+                        <Button fx:id="loadBtn" alignment="TOP_LEFT" disable="true" layoutX="15.0" layoutY="185.0" mnemonicParsing="false" onAction="#onLoadAction" prefHeight="25.0" prefWidth="150.0" text="%start.button.load">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="deleteBtn" alignment="TOP_LEFT" disable="true" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="25.0" prefWidth="150.0" text="%start.button.delete">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <Label fx:id="infoLabel" layoutX="633.0" layoutY="146.0" prefHeight="17.0" prefWidth="180.0" />
+               </children>
+</fx:root>

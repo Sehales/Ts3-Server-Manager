@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+      <Separator layoutX="150.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="0.0" />
+      <TableView fx:id="serverTable" layoutX="175.0" layoutY="14.0" prefHeight="485.0" prefWidth="555.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="15.0">
+        <columns>
+            <TableColumn prefWidth="30.0" text="%serverlist.tablehead.serverid">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="id" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nameColumn" prefWidth="195.0" text="%serverlist.tablehead.name" />
+            <TableColumn prefWidth="45.0" text="%serverlist.tablehead.port">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="port" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="slotsColumn" prefWidth="70.0" text="%serverlist.tablehead.slots" />
+            <TableColumn fx:id="uptimeColumn" prefWidth="75.0" text="%serverlist.tablehead.uptime" />
+            <TableColumn fx:id="autostartColumn" prefWidth="60.0" text="%serverlist.tablehead.autostart">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="autostart" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="58.0" text="%serverlist.tablehead.machineid">
+            	<cellValueFactory>
+                	<PropertyValueFactory property="machineId" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" layoutX="175.0" layoutY="506.0" prefHeight="50.0" prefWidth="720.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <VBox prefHeight="50.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="%serverlist.label.servername" />
+                  <TextField fx:id="serverNameField" promptText="%serverlist.prompt.servername" text="TS3 Server" />
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="60.0" HBox.hgrow="NEVER">
+               <children>
+                  <Label text="%serverlist.label.slots" />
+                  <TextField fx:id="slotsField" promptText="%serverlist.prompt.slots" text="32" />
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox layoutX="415.0" layoutY="10.0" prefHeight="50.0" prefWidth="60.0">
+               <children>
+                  <Label text="%serverlist.label.port" />
+                  <TextField fx:id="portField" promptText="%serverlist.prompt.port" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <CheckBox fx:id="autostartCheckbox" fx:id="autostartCheckbox" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="17.0" prefWidth="75.0" text="%serverlist.label.autostart">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </CheckBox>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onCreateAction" prefWidth="150.0" text="%serverlist.button.create">
+               <HBox.margin>
+                  <Insets left="11.0" right="10.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="736.0" layoutY="15.0" prefHeight="485.0" prefWidth="150.0" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onSelectServerAction" prefWidth="150.0" text="%serverlist.button.select" />
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSelectServerByIdAction" prefWidth="150.0" text="%serverlist.button.selectbyid">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSelectServerByPortAction" prefWidth="150.0" text="%serverlist.button.selectbyport">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" onAction="#onExitAction" prefWidth="150.0" text="%serverlist.button.exit" />
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#onStartServerAction" prefWidth="150.0" text="%serverlist.button.start">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" onAction="#onStopServerAction" prefWidth="150.0" text="%serverlist.button.stop">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#onDeleteServerAction" prefWidth="150.0" text="%serverlist.button.delete" />
+            <Button alignment="TOP_LEFT" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#onRefreshAction" prefWidth="150.0" text="%serverlist.button.refresh">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </Button>
+            <VBox alignment="BOTTOM_LEFT" maxWidth="150.0" prefHeight="210.0" prefWidth="150.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <BorderPane prefHeight="10.0" prefWidth="140.0">
+                     <right>
+                        <Label fx:id="serverCountLabel" maxWidth="55.0" prefHeight="17.0" prefWidth="55.0" text="-" BorderPane.alignment="CENTER" />
+                     </right>
+                     <left>
+                        <Label maxWidth="80.0" prefHeight="17.0" text="%serverlist.label.server" BorderPane.alignment="CENTER" />
+                     </left>
+                  </BorderPane>
+                  <BorderPane layoutX="15.0" layoutY="200.0" prefHeight="10.0" prefWidth="140.0">
+                     <left>
+                        <Label maxWidth="80.0" prefHeight="17.0" text="%serverlist.label.autostart" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <Label fx:id="autostartCountLabel" maxWidth="55.0" prefHeight="17.0" prefWidth="55.0" text="-" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+                  <BorderPane layoutX="15.0" layoutY="180.0" prefHeight="10.0" prefWidth="140.0">
+                     <left>
+                        <Label maxWidth="80.0" text="%serverlist.label.slots" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <Label fx:id="slotsCountLabel" maxWidth="55.0" prefHeight="17.0" prefWidth="55.0" text="-" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+                  <BorderPane layoutX="15.0" layoutY="160.0" prefHeight="10.0" prefWidth="140.0">
+                     <left>
+                        <Label maxWidth="80.0" text="%serverlist.label.autostartslots" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <Label fx:id="autostartSlotsLabel" maxWidth="55.0" prefHeight="17.0" prefWidth="55.0" text="-" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</fx:root>
