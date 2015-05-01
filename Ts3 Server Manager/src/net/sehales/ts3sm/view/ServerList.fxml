@@ -64,7 +64,7 @@
                   <Insets />
                </HBox.margin>
             </VBox>
-            <CheckBox fx:id="autostartCheckbox" fx:id="autostartCheckbox" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="17.0" prefWidth="75.0" text="%serverlist.label.autostart">
+            <CheckBox fx:id="autostartCheckbox" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="17.0" prefWidth="75.0" text="%serverlist.label.autostart">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin>
